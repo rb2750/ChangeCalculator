@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Change Calculator</title>
+    <link rel="stylesheet" href="~/dist/dev/styles.bundle.css"/>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">Change Calculator</a>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<script src="~/dist/dev/vendor.bundle.js" asp-append-version="true"></script>
+<script src="~/dist/dev/styles.bundle.js" asp-append-version="true"></script>
+<script src="~/dist/dev/changecalculator.bundle.js" asp-append-version="true"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
