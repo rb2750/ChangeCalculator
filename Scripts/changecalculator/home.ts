@@ -1,6 +1,9 @@
 export default class Home {
 	constructor() {
-		console.log('todo');
+		this.handleFormSubmit();
+		this.handleInputChangeFinishEditing();
+	}
+
 	/**
 	 * Handle the 'calculate' button press, so that we can show a custom, more pretty response.
 	 */
@@ -21,5 +24,13 @@ export default class Home {
 			return false;
 		});
 	}
+
+	/**
+	 * When the inputs are clicked off, this corrects the values to 2DP.
+	 */
+	private handleInputChangeFinishEditing(): void {
+		$(document).on('focusout', '#calculation-form input', function () {
+			$(this).val(parseFloat(($(this).val() as string) ?? '0').toFixed(2));
+		});
 	}
 }
