@@ -5,12 +5,12 @@
 }
 
 <div class="text-center">
-    <form id="calculation-form" method="post" asp-page="Index" asp-page-handler="CalculateChange">
+    <form id="calculation-form" asp-page="Index" asp-page-handler="CalculateChange">
         <div class="input-group mb-4">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="balance-currency-label">£</span>
             </div>
-            <input type="number" min="0.01" step="0.01" class="form-control" placeholder="Your Balance" aria-label="Your balance" aria-describedby="balance-currency-label">
+            <input name="yourBalance" type="number" min="0.01" step="0.01" class="form-control" placeholder="Your Balance" aria-label="Your balance" aria-describedby="balance-currency-label">
         </div>
         <div class="input-group mb-4">
             <div class="input-group-prepend">
