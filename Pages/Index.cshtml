@@ -1,11 +1,11 @@
-﻿@page
+﻿@page "{handler?}"
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
-    <form>
+    <form id="calculation-form" method="post" asp-page="Index" asp-page-handler="CalculateChange">
         <div class="input-group mb-4">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="balance-currency-label">£</span>
@@ -16,7 +16,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="cost-currency-label">£</span>
             </div>
-            <input type="number" min="0.01" step="0.01" class="form-control" placeholder="Product Price" aria-label="Product price" aria-describedby="cost-currency-label">
+            <input name="productPrice" type="number" min="0.01" step="0.01" class="form-control" placeholder="Product Price" aria-label="Product price" aria-describedby="cost-currency-label">
         </div>
 
         <button type="submit" class="btn btn-primary float-right">Calculate</button>
