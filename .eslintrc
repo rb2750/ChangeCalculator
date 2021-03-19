@@ -78,6 +78,7 @@
         "allowTernary": true
       }
     ],
+    "class-methods-use-this": 0,
     "object-shorthand": [
       "error",
       "always",
