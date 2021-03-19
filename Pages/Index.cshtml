@@ -5,6 +5,20 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form>
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="balance-currency-label">£</span>
+            </div>
+            <input type="number" min="0.01" step="0.01" class="form-control" placeholder="Your Balance" aria-label="Your balance" aria-describedby="balance-currency-label">
+        </div>
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="cost-currency-label">£</span>
+            </div>
+            <input type="number" min="0.01" step="0.01" class="form-control" placeholder="Product Price" aria-label="Product price" aria-describedby="cost-currency-label">
+        </div>
+
+        <button type="submit" class="btn btn-primary float-right">Calculate</button>
+    </form>
 </div>
