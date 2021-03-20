@@ -1,6 +1,6 @@
-#Change calculator
+# Change calculator
 
-##Building Instructions
+## Building Instructions
 - Navigate to project root directory.
 - Run `npm install`.
 - Run `npm run prod`.
