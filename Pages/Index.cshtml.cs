@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,9 +10,21 @@ namespace ChangeCalculator.Pages
 {
     public class IndexModel : PageModel
     {
-        public IndexModel()
+        //A dictionary between a coin/note type and its value in pence.
+        Dictionary<string, int> coinTypes = new()
         {
-        }
+            {"£50", 5000},
+            {"£20", 5000},
+            {"£10", 5000},
+            {"£5", 5000},
+            {"£2", 5000},
+            {"£1", 5000},
+            {"50p", 5000},
+            {"10p", 5000},
+            {"5p", 5000},
+            {"2p", 5000},
+            {"1p", 5000}
+        };
 
         /**
          * Calculate the change given the balance and price.
