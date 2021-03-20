@@ -16,7 +16,11 @@ export default class Home {
 				type: 'POST',
 				data: form.serialize(), // Data from the form
 				success(response) {
-					console.log(response);
+					if (response.success) {
+						Home.displayCard('Your change is:', Home.generateHTMLChangeListFromObject(response.result), false);
+					} else {
+						Home.displayCard('There was an error', response.message, true);
+					}
 				}
 			});
 			return false;
