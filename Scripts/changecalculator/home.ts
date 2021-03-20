@@ -32,6 +32,10 @@ export default class Home {
 	 * @param input The "change" array returned from the server
 	 */
 	private static generateHTMLChangeListFromObject(input: Record<string, unknown>) {
+		if (Object.keys(input).length === 0) {
+			return 'No change given.';
+		}
+
 		const listInstance = $('<ul></ul>');
 
 		Object.keys(input).forEach((key) => {
