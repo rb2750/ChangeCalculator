@@ -5,7 +5,7 @@
 }
 
 <div class="text-center">
-    <form id="calculation-form" asp-page="Index" asp-page-handler="CalculateChange">
+    <form id="calculation-form" class="clearfix" asp-page="Index" asp-page-handler="CalculateChange">
         <div class="input-group mb-4">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="balance-currency-label">£</span>
@@ -21,4 +21,9 @@
 
         <button type="submit" class="btn btn-primary float-right">Calculate</button>
     </form>
+
+    <div id="response-card" class="w-100 mt-4 card" style="display: none;">
+        <div class="card-header"></div>
+        <div class="card-body"></div>
+    </div>
 </div>
