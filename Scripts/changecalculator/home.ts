@@ -26,6 +26,20 @@ export default class Home {
 	}
 
 	/**
+	 * Generate a HTML list given the response from the serve
+	 * @param input The "change" array returned from the server
+	 */
+	private static generateHTMLChangeListFromObject(input: Record<string, unknown>) {
+		const listInstance = $('<ul></ul>');
+
+		Object.keys(input).forEach((key) => {
+			listInstance.append($(`<li>${input[key]}x ${key}</li>`));
+		});
+
+		return listInstance.html();
+	}
+
+	/**
 	 * When the inputs are clicked off, this corrects the values to 2DP.
 	 */
 	private handleInputChangeFinishEditing(): void {
