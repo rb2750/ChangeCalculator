@@ -31,10 +31,17 @@ namespace ChangeCalculator.Pages
                 return new JsonResult(new {success = false, message = "The entered product price must be not be below 0."});
             }
 
-            var response = new Dictionary<string, int>();
-
-
+            var response = CalculateChange(yourBalance,productPrice);
+            
             return new JsonResult(new {success = true, result = response});
+        }
+
+        /**
+         * This function calculates the change that should be given.
+         */
+        private Dictionary<string, int> CalculateChange(float balance, float productPrice)
+        {
+            
         }
     }
 }
