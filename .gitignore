@@ -10,6 +10,12 @@
 *.userosscache
 *.sln.docstates
 
+#Ignore distribution folder
+wwwroot/dist
+
+#Ignore webpack stats
+Webpack/stats.json
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
