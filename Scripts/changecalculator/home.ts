@@ -33,4 +33,28 @@ export default class Home {
 			$(this).val(parseFloat(($(this).val() as string) ?? '0').toFixed(2));
 		});
 	}
+
+	/**
+	 * Slides down a card
+	 * @param header The text to show as the card header
+	 * @param content The content to show in the card
+	 * @param error whether the card should be red
+	 */
+	private static displayCard(header: string, content: string, error: boolean | false) {
+		const card = $('#response-card');
+
+		// Set the header and body.
+		card.find('.card-header').html(header);
+		card.find('.card-body').html(content);
+
+		// If it's of an error type, set the relevant classes, else remove them.
+		if (error) {
+			card.addClass('bg-danger text-white');
+		} else {
+			card.removeClass('bg-danger text-white');
+		}
+
+		// Animate the card sliding down.
+		card.slideDown();
+	}
 }
