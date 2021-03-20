@@ -30,7 +30,7 @@ export default class Home {
 	 */
 	private handleInputChangeFinishEditing(): void {
 		$(document).on('focusout', '#calculation-form input', function () {
-			$(this).val(parseFloat(($(this).val() as string) ?? '0').toFixed(2));
+			$(this).val(parseFloat(($(this).val() as string) || '0' /* If null then 0 to prevent NaN error */).toFixed(2));
 		});
 	}
 
