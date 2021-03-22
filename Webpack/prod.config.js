@@ -7,7 +7,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const DoneWebpackPlugin = require('done-webpack-plugin');
 const fs = require('fs');
-const {ProvidePlugin} = require("webpack");
+const { ProvidePlugin } = require('webpack');
 
 module.exports = merge(baseConfig, {
 	mode: 'production',
@@ -16,6 +16,8 @@ module.exports = merge(baseConfig, {
 		publicPath: '/dist/prod/',
 		filename: '[name].bundle.[contenthash].js',
 		chunkFilename: '[name].[contenthash].js',
+		libraryExport: 'default',
+		libraryTarget: 'umd',
 		library: 'ChangeCalculator'
 	},
 	optimization: {
@@ -57,11 +59,12 @@ module.exports = merge(baseConfig, {
 			filename: '[name].bundle.[contenthash].css'
 		}),
 		new ProvidePlugin({
-			$: "jquery",
-			jquery: "jQuery",
-			"window.jQuery": "jquery"
-		}),		
-		new DoneWebpackPlugin(stats => {
+			$: 'jquery',
+			jquery: 'jQuery',
+			'window.jQuery': 'jquery'
+		}),
+		new DoneWebpackPlugin(stats =>
+		{
 			fs.writeFileSync(
 				path.join(__dirname, 'stats.json'),
 				JSON.stringify(
